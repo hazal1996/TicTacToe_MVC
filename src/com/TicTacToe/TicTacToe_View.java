@@ -17,7 +17,9 @@ public class TicTacToe_View extends JFrame
     private JMenuItem restartGame;
     private JMenuItem endGame;
     private TicTacToe_Controller ticTacToe_controller;
+    private JMenu m;
     private int dim;
+    private JTextField authorName;
 
     public TicTacToe_View()
     {
@@ -40,10 +42,12 @@ public class TicTacToe_View extends JFrame
     public void initializeMenuBar()
     {
         menuBar=new JMenuBar();
+        authorName=new JTextField("Author: Mehrin Athar");
+        m=new JMenu("Author: Mehrin Athar");
+        m.addSeparator();
         menu=new JMenu("Game Options");
         restartGame=new JMenuItem("Restart");
         endGame=new JMenuItem("End Game");
-
         //now add listener for when player clicks Restart
         restartGame.addActionListener(new ActionListener() {
             @Override
@@ -66,6 +70,7 @@ public class TicTacToe_View extends JFrame
         menu.add(endGame);
 
         //now add menu to menu bar
+        menuBar.add(m);
         menuBar.add(menu);
         setJMenuBar(menuBar);//JFrame method
     }
